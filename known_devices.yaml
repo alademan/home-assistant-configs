@@ -1,0 +1,30 @@
+520dcd99cbb97b7d:
+  name: Tony Nexus 6
+  mac: F8:CF:C5:A5:0A:B1
+  #gravatar: satoshi@sugardeath.net
+  track: true
+  hide_if_away: no
+
+venue8pro:
+  name: Tony's Dell Venue 8 Pro
+  mac: A4:34:D9:3B:94:53
+  track: true
+  hide_if_away: no
+
+nexus10:
+  name: Tony's Nexus 10
+  mac: BC:20:A4:7B:05:44
+  track: true
+  hide_if_away: no
+
+TSSLTC026:
+  name: TSS-LTC-026
+  mac: AC:2B:6E:A2:7D:17
+  track: true
+  hide_if_away: no
+
+ps4:
+  name: PS4
+  mac: 70:9e:29:4a:cc:d8
+  track: true
+  hide_if_away: no

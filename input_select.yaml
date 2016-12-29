@@ -1,0 +1,97 @@
+# Time Selects
+
+lr_relax:
+  name: Relax Time
+  icon: mdi:clock
+  options:
+    - '21:00'
+    - '22:00'
+    - '23:00'
+    - '00:00'
+    - '01:00'
+  initial: '22:00'
+    
+lr_dim:
+  name: Dim Time
+  icon: mdi:clock
+  options: 
+    - '22:00'
+    - '23:00'
+    - '00:00'
+    - '01:00'
+    - '02:00'
+    - '03:00'
+  initial: '23:00'
+    
+lr_nightlight:
+  name: Nightlight
+  icon: mdi:clock
+  options:
+    - '22:00'
+    - '23:00'
+    - '00:00'
+    - '01:00'
+    - '02:00'
+    - '03:00'
+    - '04:00'
+  initial: '01:00'
+    
+br_wake_up:
+  name: Wake Up
+  icon: mdi:clock
+  options:
+    - '05:00'
+    - '06:00'
+    - '07:00'
+    - '08:00'
+    - '09:00'
+    - '10:00'
+    - '11:00'
+    - '12:00'
+  initial: '08:00'
+    
+br_light_on:
+  name: Light On
+  icon: mdi:clock
+  options:
+    - '20:00'
+    - '21:00'
+    - '22:00'
+    - '23:00'
+    - '00:00'
+    - '01:00'
+  initial: '22:00'
+    
+br_go_to_sleep:
+  name: Go To Sleep
+  icon: mdi:clock
+  options: 
+    - '00:00'
+    - '00:15'
+    - '00:30'
+    - '00:45'
+    - '01:00'
+    - '01:15'
+    - '01:30'
+    - '01:45'
+    - '02:00'
+    - '02:15'
+    - '02:30'
+    - '02:45'
+    - '03:00'
+    - '03:15'
+    - '03:30'
+    - '03:45'
+  initial: '01:00'
+
+# Scene Selects
+
+arrive_home_scene:
+  name: Arrive Home Scene
+  options:
+    - 'Concentrate'
+    - 'Bright'
+    - 'Relax'
+    - 'Purple Accent'
+    - 'Pink Accent'
+  initial: 'Bright'

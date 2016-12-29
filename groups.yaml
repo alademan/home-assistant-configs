@@ -1,0 +1,146 @@
+#########
+# Groups
+#########
+
+# Home
+#Info:
+#- sun.sun
+
+Media:
+  - media_player._fun
+
+Tony Presence:
+  - device_tracker.520dcd99cbb97b7d
+  - device_tracker.nexus10
+  - device_tracker.venue8pro
+  - device_tracker.tssltc026
+  - device_tracker.ps4
+
+# Lights
+## Living Room
+Living Room Lights:
+  - light.floor_lamp
+  - light.table_lamp
+
+Living Room Scenes:
+  - group.living_room_normal_scenes
+  - group.living_room_colorful_scenes
+
+Living Room Normal Scenes:
+  - scene.living_room_energize
+  - scene.living_room_concentrate
+  - scene.living_room_bright
+  - scene.living_room_relax
+  - scene.living_room_dimmed
+  - scene.living_room_nightlight
+
+Living Room Colorful Scenes:
+  - scene.living_room_pink_accent
+  - scene.living_room_light_pink_accent
+  - scene.living_room_purples
+  - scene.living_room_purple_big
+  - scene.living_room_purple_accent
+  - scene.living_room_pink
+  - scene.living_room_dark_pink
+
+Living Room Automation:
+  entities:
+    - automation.living_room_get_relaxed
+    - input_select.lr_relax
+    - automation.living_room_time_to_dim
+    - input_select.lr_dim
+    - automation.living_room_nightlight_on
+    - input_select.lr_nightlight
+
+## Bedroom
+Bedroom Lights:
+  - light.nightstand
+
+Bedroom Scenes:
+  - group.bedroom_normal_scenes
+  - group.bedroom_colorful_scenes
+
+Bedroom Normal Scenes:
+  - scene.bedroom_energize
+  - scene.bedroom_concentrate
+  - scene.bedroom_bright
+  - scene.bedroom_read
+  - scene.bedroom_relax
+  - scene.bedroom_dimmed
+  - scene.bedroom_nightlight_small
+
+Bedroom Colorful Scenes:
+  - scene.bedroom_night_pink
+
+Bedroom Automation:
+  - automation.bedroom_wake_up
+  - input_select.br_wake_up
+  - automation.bedroom_light_on
+  - input_select.br_light_on
+  - automation.bedroom_go_to_sleep
+  - input_select.br_go_to_sleep
+
+## General
+Lights General Presence Automation:
+  - automation.notify_when_tony_phone_changes_location
+  - automation.turn_on_living_room_lights_when_sun_sets_and_home
+  - input_select.arrive_home_scene
+  - automation.turn_off_all_lights_when_leaving_home
+
+Lights General Time Automation:
+  - automation.turn_all_nightlights_off
+  - automation.energize_living_room_at_sunrise
+
+All Lights:
+  - light.nightstand
+  - light.floor_lamp
+  - light.table_lamp
+
+# Resources
+VPS:
+  - sensor.cpu_use
+  - sensor.disk_use_
+  - sensor.ram_free
+
+LAN:
+  - camera.daily_comcast_bandwidth_usage
+    
+##########
+# Views
+##########
+default_view: 
+  name: Default
+  view: yes
+  entities:
+    - sun.sun
+    #- group.info
+    - group.tony_presence
+
+Lights:
+  view: yes
+  entities:
+    - group.living_room_lights
+    - group.living_room_normal_scenes
+    - group.living_room_colorful_scenes
+    - group.bedroom_lights
+    - group.bedroom_normal_scenes
+    - group.bedroom_colorful_scenes
+
+Automation:
+  view: yes
+  entities:
+    - group.living_room_automation
+    - group.bedroom_automation
+    - group.lights_general_presence_automation
+    - group.lights_general_time_automation
+
+Resources:
+  view: yes
+  entities:
+    - group.vps
+    - group.lan
+
+#Debug:
+#  view: yes
+#  entities: 
+#    - group.media

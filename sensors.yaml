@@ -1,0 +1,27 @@
+#sensor:
+#  - platform: forecast
+#    api_key: asdf
+#    monitored_conditions:
+#      - summary
+#      - humidity
+#      - temperature
+#  - platform: time_date
+#    display_options:
+#      - 'date_time'
+#      - 'beat'
+#  - platform: transmission
+#    host: localhost
+#    port: 9091
+#    name: Transmission
+#    username: satoshi
+#    password: p0k3ts12
+#    monitored_variables:
+#      - 'current_status'
+#      - 'download_speed'
+#      - 'upload_speed'
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: processor_use

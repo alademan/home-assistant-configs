@@ -1,0 +1,31 @@
+#lr_relax:
+#  name: Relax Time
+#  initial: 22
+#  min: 19
+#  max: 23
+#lr_dim:
+#  name: Dim Time
+#  initial: 23
+#  min: 22
+#  max: 03
+#lr_nightlight:
+#  name: Nightlight
+#  initial: 01
+#  min: 22
+#  max: 04
+#br_wake_up:
+#  name: Wake Up
+#  initial: 08
+#  min: 05
+#  max: 12
+#br_light_on:
+#  name: Light On
+#  initial: 22
+#  min: 20
+#  max: 01
+#br_go_to_sleep:
+#  name: Go To Sleep
+#  initial: 01
+#  min: 22
+#  max: 03
+#

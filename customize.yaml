@@ -1,0 +1,125 @@
+# Automation Customizations
+automation.living_room_get_relaxed:
+  friendly_name: "Relaxed Lighting"
+automation.living_room_time_to_dim:
+  friendly_name: "Dim the Lights"
+automation.living_room_nightlight_on:
+  friendly_name: "Turn on Nightlight"
+
+automation.bedroom_wake_up:
+  friendly_name: "Wake Up"
+automation.bedroom_light_on:
+  friendly_name: "Light On"
+automation.bedroom_go_to_sleep:
+  friendly_name: "Go To Sleep"
+
+# Group Customizations
+group.living_room_lights:
+  friendly_name: Living Room
+  icon: mdi:lightbulb-outline
+
+group.living_room_normal_scenes:
+  friendly_name: Living Room Normal Scenes
+  icon: mdi:lightbulb-outline
+
+group.living_room_colorful_scenes:
+  friendly_name: Living Room Colorful Scenes
+  icon: mdi:lightbulb-outline
+
+group.living_room_automation:
+  friendly_name: Living Room Automation
+  icon: mdi:playlist-play
+
+group.bedroom_lights:
+  friendly_name: Bedroom
+  icon: mdi:lightbulb-outline
+
+group.bedroom_normal_scenes:
+  friendly_name: Bedroom Normal Scenes
+  icon: mdi:lightbulb-outline
+
+group.bedroom_colorful_scenes:
+  friendly_name: Bedroom Colorful Scenes
+  icon: mdi:lightbulb-outline
+
+group.bedroom_automation:
+  friendly_name: Bedroom Automation
+  icon: mdi:playlist-play
+
+group.lights_general_presence_automation:
+  friendly_name: Presence Automation
+
+group.lights_general_time_automation:
+  friendly_name: Time Automation
+
+# Scene Customizations
+# Living Room Scenes:
+scene.living_room_energize:
+  friendly_name: Energize
+scene.living_room_concentrate:
+  friendly_name: Concentrate
+scene.living_room_bright:
+  friendly_name: Bright
+scene.living_room_read:
+  friendly_name: Read
+scene.living_room_relax:
+  friendly_name: Relax
+scene.living_room_relax_dimmed:
+  friendly_name: Relax Dimmed
+scene.living_room_dimmed:
+  friendly_name: Dimmed
+scene.living_room_nightlight:
+  friendly_name: Nightlight
+scene.living_room_pink_accent:
+  friendly_name: Pink Accent
+scene.living_room_light_pink_accent:
+  friendly_name: Light Pink Accent
+scene.living_room_purple_accent:
+  friendly_name: Purple Accent
+scene.living_room_pink:
+  friendly_name: Pink
+scene.living_room_dark_pink:
+  friendly_name: Dark Pink
+
+#Bedroom Scenes:
+# Normal
+scene.bedroom_energize:
+  friendly_name: Energize
+scene.bedroom_concentrate:
+  friendly_name: Concentrate
+scene.bedroom_bright:
+  friendly_name: Bright
+scene.bedroom_read:
+  friendly_name: Read
+scene.bedroom_relax:
+  friendly_name: Relax
+scene.bedroom_relax_dimmed:
+  friendly_name: Relax Dimmed
+scene.bedroom_dimmed:
+  friendly_name: Dimmed
+scene.bedroom_nightlight:
+  friendly_name: Nightlight
+scene.bedroom_night_pink:
+  friendly_name: Night Pink
+
+
+# Device Customizations
+device_tracker.venue8pro:
+  friendly_name: Venue 8 Pro
+  icon: mdi:windows
+
+device_tracker.520dcd99cbb97b7d:
+  friendly_name: Nexus 6
+  icon: mdi:android
+
+device_tracker.nexus10:
+  friendly_name: Nexus 10
+  icon: mdi:android
+
+device_tracker.tssltc026:
+  friendly_name: TSS-LTC-026
+  icon: mdi:windows
+
+device_tracker.ps4:
+  friendly_name: PS4
+  icon: mdi:playstation

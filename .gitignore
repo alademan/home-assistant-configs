@@ -1,0 +1,11 @@
+deps/
+*.token
+*.db
+*.log
+*.swp
+*.swo
+.uuid
+phue.conf
+secrets.yaml
+google_calendars.yaml
+panel_iframe.yaml

@@ -1,0 +1,81 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data
+  elevation: 180.4
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  api_password: !secret http_password
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+#discovery:
+
+light:
+  platform: hue
+  host: 10.0.0.30
+  allow_unreachable: true
+  filename: phue.conf
+
+#media_player:
+#  platform: cast
+#  host: 10.0.0.11
+    
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Graphs
+camera:
+  - platform: generic
+    still_image_url: !secret camera_still_image_url
+    name: Daily Comcast Bandwidth Usage
+      
+# Pushover Notifications
+notify:
+  - name: Pushover
+    platform: pushover
+    api_key: !secret pushover_api_key
+    user_key: !secret pushover_user_key
+
+
+# Google Calendar
+google:
+  client_id: !secret google_calendar_client_id
+  client_secret: !secret google_calendar_client_secret
+
+# Includes
+automation: !include automation.yaml
+device_tracker: !include device_tracker.yaml
+group: !include groups.yaml
+input_slider: !include input_slider.yaml
+input_select: !include input_select.yaml
+panel_iframe: !include panel_iframe.yaml
+scene: !include scenes.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+zone: !include zones.yaml
