@@ -1,1 +1,13 @@
+tv_toggle_power:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJJQSEhETEjcSExETERQUEBETETgSOBETEDkROBI3EjgROBETERQRExE4EBQTEhETERMTNhE5EzYRExM2ETkUNRM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
 
+tv_toggle_mute:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABI5UTERQQFDYTERMRExITERMRFDYTNhQQEjcUNRQ2EzYTNhQ1FBETERM2ExEVEBMRExEUERM2EzYUEBQ2EzYTNhU0FAAFGQABJUoUAA0FAAAAAAAAAAA="

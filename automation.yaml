@@ -27,7 +27,7 @@
       state: 'home'
   action: 
     - service: scene.turn_on
-      entity_id: scene.living_room_purple_accent
+      entity_id: scene.living_room_bright
     
 - alias: Turn off all lights when leaving home
   trigger:
@@ -121,6 +121,27 @@
     service: light.turn_off
     entity_id: light.nightstand
 
+##########
+# Input Select
+##########
+
+- alias: Playstation Input
+  trigger:
+    platform: state
+    entity_id: input_select.ps4_actions
+    to: "Media Player"
+  action: 
+    service: shell_command.ps4_media_player
+
+- alias: bloom and tv
+  trigger:
+    platform: state
+    entity_id: light.tv_bloom
+  action:
+    service: homeassistant.toggle
+    entity_id: group.tv_group
+
+#
 # All
 
 #- alias: Turn All Nightlights Off

@@ -1,8 +1,8 @@
-#lr_relax:
-#  name: Relax Time
-#  initial: 22
-#  min: 19
-#  max: 23
+lr_relax:
+  name: Relax Time
+  initial: 22
+  min: 19
+  max: 23
 #lr_dim:
 #  name: Dim Time
 #  initial: 23

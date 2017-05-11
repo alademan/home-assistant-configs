@@ -64,18 +64,46 @@ notify:
 
 
 # Google Calendar
-google:
-  client_id: !secret google_calendar_client_id
-  client_secret: !secret google_calendar_client_secret
+#google:
+#  client_id: !secret google_calendar_client_id
+#  client_secret: !secret google_calendar_client_secret
+
+# ifttt
+ifttt:
+  key: !secret ifttt_key
+
+# Living Room IR Blaster
+switch:
+  platform: broadlink
+  host: 10.0.0.31
+  mac: 'B4:43:0D:FC:17:82'
+  friendly_name: "Living Room IR Blaster"
+  switches: 
+    tv: 
+      friendly_name: "Hannspree TV"
+      command_on: "JgBQAAABJJQSEhETEjcSExETERQUEBETETgSOBETEDkROBI3EjgROBETERQRExE4EBQTEhETERMTNhE5EzYRExM2ETkUNRM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+
+
+# Emulated Hue Bridge, allows Google Assistant to see
+# devices AND SWITCHES defined within home-assistant
+# DISABLED BECAUSE GOOGLE ASSISTANT APP REQUIRES
+# GOING THROUGH MEETHUE.COM, WHICH DOES NOT WORK WITH
+# EMULATED_HUE
+#emulated_hue:
+#  type: google_home
+#  host_ip: 10.0.0.20
+#  listen_port: 80
+#  advertise_ip: 10.0.0.20
 
 # Includes
-automation: !include automation.yaml
+automation: !include_dir_list automations
 device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 input_slider: !include input_slider.yaml
 input_select: !include input_select.yaml
 panel_iframe: !include panel_iframe.yaml
-scene: !include scenes.yaml
+scene: !include_dir_merge_list scenes
 script: !include scripts.yaml
+shell_command: !include shell_command.yaml
 sensor: !include sensors.yaml
 zone: !include zones.yaml

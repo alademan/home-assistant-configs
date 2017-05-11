@@ -1,0 +1,9 @@
+ps4_on: "/home/satoshi/scripts/ps4/ps4_on.sh"
+
+ps4_off: "/home/satoshi/scripts/ps4/ps4_off.sh"
+
+ps4_netflix: "/home/satoshi/scripts/ps4/ps4_netflix.sh"
+
+ps4_media_player: "/home/satoshi/scripts/ps4/ps4_media_player.sh"
+
+ps4_overwatch: "/home/satoshi/scripts/ps4/ps4_overwatch.sh"

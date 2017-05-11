@@ -1,0 +1,10 @@
+alias: Notify when tony phone changes location
+trigger: 
+  platform: state
+  entity_id: device_tracker.520dcd99cbb97b7d
+action:
+  service: notify.pushover
+  data_template:
+    title: Tony Nexus 6 Location Changed
+    message: >
+      {{ trigger.from_state.state }} to {{ trigger.to_state.state }}

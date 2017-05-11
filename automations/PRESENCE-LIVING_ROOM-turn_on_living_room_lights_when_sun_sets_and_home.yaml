@@ -1,0 +1,15 @@
+alias: Turn on living room lights when sun sets and home
+trigger: 
+  - platform: sun
+    event: sunset
+    offset: "-00:45:00"
+  - platform: state
+    entity_id: device_tracker.520dcd99cbb97b7d
+    state: 'home'
+condition:
+  - condition: state
+    entity_id: device_tracker.520dcd99cbb97b7d
+    state: 'home'
+action: 
+  - service: scene.turn_on
+    entity_id: scene.living_room_bright

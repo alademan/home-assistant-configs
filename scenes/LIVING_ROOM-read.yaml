@@ -1,0 +1,14 @@
+- name: Living Room Read
+  entities: 
+    light.floor_lamp:
+      state: on
+      brightness: 254
+      xy_color: [0.4448, 0.4066]
+    light.tv_bloom:
+      state: on
+      brightness: 254
+      xy_color: [0.4448, 0.4066]
+    light.table_lamp:
+      state: on
+      brightness: 254
+      xy_color: [0.4448, 0.4066]

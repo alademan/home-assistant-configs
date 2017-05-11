@@ -5,6 +5,8 @@ deps/
 *.swp
 *.swo
 .uuid
+.HA_VERSION
+.gitignore
 phue.conf
 secrets.yaml
 google_calendars.yaml

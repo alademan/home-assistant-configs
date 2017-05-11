@@ -1,0 +1,11 @@
+alias: Living Room Get Relaxed
+trigger:
+  platform: time
+  minutes: '/1'
+  seconds: 0
+condition:
+  condition: template
+  value_template: '{{ now().strftime("%H:%M") == states.input_select.lr_relax.state }}'
+action:
+  service: scene.turn_on
+  entity_id: scene.living_room_relax_transition

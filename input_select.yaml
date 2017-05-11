@@ -95,3 +95,45 @@ arrive_home_scene:
     - 'Purple Accent'
     - 'Pink Accent'
   initial: 'Bright'
+
+lr_scenes:
+  name: Living Room Scenes
+  options:
+    - 'Concentrate'
+    - 'Bright'
+    - 'Relax'
+    - 'Game Time'
+    - 'Movie Time'
+  initial: 'Bright'
+
+ps4_actions:
+  name: Playstation 4
+  options:
+    - 'On'
+    - 'Netflix'
+    - 'Media Player'
+    - 'Overwatch'
+    - 'Off'
+  icon: mdi:playstation
+
+tv_actions:
+  name: TV
+  options:
+    - 'Power'
+    - 'Input Wii U'
+    - 'Input Chromecast'
+    - 'Input PS4'
+    - 'Input Misc'
+    - 'Volume +5'
+    - 'Volume -5'
+  icon: mdi:television
+
+soundbar_actions:
+  name: Soundbar
+  options:
+    - 'Power'
+    - 'Input Select'
+    - 'Bluetooth'
+    - 'Volume +5'
+    - 'Volume -5'
+

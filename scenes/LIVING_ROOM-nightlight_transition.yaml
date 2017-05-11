@@ -1,0 +1,13 @@
+- name: Living Room Nightlight Transition
+  entities: 
+    light.table_lamp:
+      state: off
+      transition: 300
+    light.tv_bloom:
+      state: off
+      transition: 300
+    light.floor_lamp:
+      state: on
+      brightness: 1
+      transition: 300
+      xy_color: [0.5608, 0.4042]

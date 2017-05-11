@@ -1,0 +1,14 @@
+- name: Living Room Games
+  entities: 
+    light.floor_lamp:
+      state: on
+      brightness: 178
+      xy_color: [0.5017, 0.4152]
+    light.tv_bloom:
+      state: on
+      brightness: 254
+      xy_color: [0.457, 0.4098]
+    light.table_lamp:
+      state: on
+      brightness: 178
+      xy_color: [0.5017, 0.4152]

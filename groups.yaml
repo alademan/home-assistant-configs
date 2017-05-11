@@ -16,17 +16,24 @@ Tony Presence:
   - device_tracker.tssltc026
   - device_tracker.ps4
 
+TV Group:
+  - script.tv_toggle_power 
+  - light.tv_bloom
+
 # Lights
 ## Living Room
 Living Room Lights:
   - light.floor_lamp
   - light.table_lamp
+  - light.tv_bloom
 
 Living Room Scenes:
   - group.living_room_normal_scenes
   - group.living_room_colorful_scenes
 
 Living Room Normal Scenes:
+  - scene.living_room_games
+  - scene.living_room_movies
   - scene.living_room_energize
   - scene.living_room_concentrate
   - scene.living_room_bright
@@ -91,11 +98,6 @@ Lights General Time Automation:
   - automation.turn_all_nightlights_off
   - automation.energize_living_room_at_sunrise
 
-All Lights:
-  - light.nightstand
-  - light.floor_lamp
-  - light.table_lamp
-
 # Resources
 VPS:
   - sensor.cpu_use
@@ -109,22 +111,40 @@ LAN:
 # Views
 ##########
 default_view: 
-  name: Default
+  name: Main
   view: yes
   entities:
     - sun.sun
     #- group.info
     - group.tony_presence
 
-Lights:
+Living Room:
   view: yes
-  entities:
+  entities: 
+#    - input_select.lr_scenes
+    - input_select.tv_actions
+    - input_select.ps4_actions
     - group.living_room_lights
     - group.living_room_normal_scenes
     - group.living_room_colorful_scenes
+    - switch.hannspree_tv
+
+Bedroom:
+  view: yes
+  entities:
     - group.bedroom_lights
     - group.bedroom_normal_scenes
     - group.bedroom_colorful_scenes
+
+#Lights:
+#  view: yes
+#  entities:
+#    - group.living_room_lights
+#    - group.living_room_normal_scenes
+#    - group.living_room_colorful_scenes
+#    - group.bedroom_lights
+#    - group.bedroom_normal_scenes
+#    - group.bedroom_colorful_scenes
 
 Automation:
   view: yes

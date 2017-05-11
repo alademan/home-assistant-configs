@@ -1,0 +1,17 @@
+- name: Living Room Dimmed Transition
+  entities: 
+    light.floor_lamp:
+      state: on
+      brightness: 77
+      transition: 300
+      xy_color: [0.4572, 0.4098]
+    light.tv_bloom:
+      state: on
+      brightness: 254
+      transition: 300
+      xy_color: [0.4572, 0.4098]
+    light.table_lamp:
+      state: on
+      brightness: 77
+      transition: 300
+      xy_color: [0.4572, 0.4098]
