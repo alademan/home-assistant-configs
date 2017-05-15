@@ -49,3 +49,77 @@ tv_input_ps4:
       data:
         packet: 
           - "JgBQAAABJJUTERMREzYUERMRERMTEhMREzYTNhQREzYTNhM2FDYTNhMRExEUERMREzYTEhMRExETNhQ2EzYTNhMREzcTNhM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+
+tv_volume_up:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpITERMSETgSEhETEhMSEhETETkROBISETgROBI4ETgTNhETEjcUERISERQRExISERMRORISETgUNRI4ETgSNxM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpITERMSETgSEhETEhMSEhETETkROBISETgROBI4ETgTNhETEjcUERISERQRExISERMRORISETgUNRI4ETgSNxM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpITERMSETgSEhETEhMSEhETETkROBISETgROBI4ETgTNhETEjcUERISERQRExISERMRORISETgUNRI4ETgSNxM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpITERMSETgSEhETEhMSEhETETkROBISETgROBI4ETgTNhETEjcUERISERQRExISERMRORISETgUNRI4ETgSNxM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpITERMSETgSEhETEhMSEhETETkROBISETgROBI4ETgTNhETEjcUERISERQRExISERMRORISETgUNRI4ETgSNxM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpITERMSETgSEhETEhMSEhETETkROBISETgROBI4ETgTNhETEjcUERISERQRExISERMRORISETgUNRI4ETgSNxM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+
+tv_volume_down:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJ5ESExETETgSExETERMRFBETETgROBEUETgROBE4ETgSOBE4ETgRFBETERMRFBAUERMRExEUETgROBE4ETgTNxE4EQAFHAABJkkRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJ5ESExETETgSExETERMRFBETETgROBEUETgROBE4ETgSOBE4ETgRFBETERMRFBAUERMRExEUETgROBE4ETgTNxE4EQAFHAABJkkRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJ5ESExETETgSExETERMRFBETETgROBEUETgROBE4ETgSOBE4ETgRFBETERMRFBAUERMRExEUETgROBE4ETgTNxE4EQAFHAABJkkRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJ5ESExETETgSExETERMRFBETETgROBEUETgROBE4ETgSOBE4ETgRFBETERMRFBAUERMRExEUETgROBE4ETgTNxE4EQAFHAABJkkRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJ5ESExETETgSExETERMRFBETETgROBEUETgROBE4ETgSOBE4ETgRFBETERMRFBAUERMRExEUETgROBE4ETgTNxE4EQAFHAABJkkRAA0FAAAAAAAAAAA="
+    - delay:
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJ5ESExETETgSExETERMRFBETETgROBEUETgROBE4ETgSOBE4ETgRFBETERMRFBAUERMRExEUETgROBE4ETgTNxE4EQAFHAABJkkRAA0FAAAAAAAAAAA="
