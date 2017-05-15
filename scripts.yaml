@@ -1,3 +1,9 @@
+#living_room_shutdown:
+#  sequence:
+#    -service: script.tv_toggle_power
+#    -service: light.turn_off
+#     entity_id: group.living_room_lights
+
 tv_toggle_power:
   sequence:
     - service: broadlink.send_packet_10_0_0_31
@@ -11,3 +17,35 @@ tv_toggle_mute:
       data:
         packet: 
           - "JgBQAAABI5UTERQQFDYTERMRExITERMRFDYTNhQQEjcUNRQ2EzYTNhQ1FBETERM2ExEVEBMRExEUERM2EzYUEBQ2EzYTNhU0FAAFGQABJUoUAA0FAAAAAAAAAAA="
+
+tv_input_wiiu:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpETEhMREjcUERISExETEhISEzYTNhMSEzYUNRQ1FDYTNhM2FDUUERI3ExESExISEhISEhMSEzYUEBI3FDUUNhM2FAAFGQABJkkTAA0FAAAAAAAAAAA="
+    - delay: 
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJJQTERMSETgRExITERMTERMSETgROBETETgSOBE4ETgROBEUERMRExE4EjgRExETERMTNxE4ETgTERITETgROBE4EwAFGgABJEsSAA0FAAAAAAAAAAA="
+
+tv_input_ps4:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpETEhMREjcUERISExETEhISEzYTNhMSEzYUNRQ1FDYTNhM2FDUUERI3ExESExISEhISEhMSEzYUEBI3FDUUNhM2FAAFGQABJkkTAA0FAAAAAAAAAAA="
+    - delay: 
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJ5EVEBMRFDUUERMRExEUERMREzYUNRQREzYTNhM2FDUUNhM2FBAUERMREzYTERQRExETERQ2EzYUNRQQFDYTNhM2FAAFGQABJ0gTAA0FAAAAAAAAAAA="
+    - delay: 
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJJUTERMREzYUERMRERMTEhMREzYTNhQREzYTNhM2FDYTNhMRExEUERMREzYTEhMRExETNhQ2EzYTNhMREzcTNhM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
