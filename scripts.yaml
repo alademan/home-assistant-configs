@@ -1,8 +1,10 @@
-#living_room_shutdown:
-#  sequence:
-#    -service: script.tv_toggle_power
-#    -service: light.turn_off
-#     entity_id: group.living_room_lights
+living_room_shutdown:
+  sequence:
+    - service: script.tv_toggle_power
+    - service: shell_command.ps4_off
+    - service: scene.turn_on
+      data:
+        entity_id: scene.living_room_nightlight
 
 tv_toggle_power:
   sequence:
@@ -31,6 +33,19 @@ tv_input_wiiu:
         packet: 
           - "JgBQAAABJJQTERMSETgRExITERMTERMSETgROBETETgSOBE4ETgROBEUERMRExE4EjgRExETERMTNxE4ETgTERITETgROBE4EwAFGgABJEsSAA0FAAAAAAAAAAA="
 
+tv_input_chromecast:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpETEhMREjcUERISExETEhISEzYTNhMSEzYUNRQ1FDYTNhM2FDUUERI3ExESExISEhISEhMSEzYUEBI3FDUUNhM2FAAFGQABJkkTAA0FAAAAAAAAAAA="
+    - delay: 
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJJQSExETEzYTEhETERMRFBETETgSOBETETgROBE4ETkSNxE4ERMTEhE4ETgRExEUERMRExE5ETgRExETETkROBE4EQAFHAABJEsRAA0FAAAAAAAAAAA="
+
 tv_input_ps4:
   sequence:
     - service: broadlink.send_packet_10_0_0_31
@@ -49,6 +64,25 @@ tv_input_ps4:
       data:
         packet: 
           - "JgBQAAABJJUTERMREzYUERMRERMTEhMREzYTNhQREzYTNhM2FDYTNhMRExEUERMREzYTEhMRExETNhQ2EzYTNhMREzcTNhM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+
+tv_input_misc:
+  sequence:
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet:
+          - "JgBQAAABJpETEhMREjcUERISExETEhISEzYTNhMSEzYUNRQ1FDYTNhM2FDUUERI3ExESExISEhISEhMSEzYUEBI3FDUUNhM2FAAFGQABJkkTAA0FAAAAAAAAAAA="
+    - delay: 
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJ5EVEBMRFDUUERMRExEUERMREzYUNRQREzYTNhM2FDUUNhM2FBAUERMREzYTERQRExETERQ2EzYUNRQQFDYTNhM2FAAFGQABJ0gTAA0FAAAAAAAAAAA="
+    - delay: 
+        milliseconds: 500
+    - service: broadlink.send_packet_10_0_0_31
+      data:
+        packet: 
+          - "JgBQAAABJ5EVEBMRFDUUERMRExEUERMREzYUNRQREzYTNhM2FDUUNhM2FBAUERMREzYTERQRExETERQ2EzYUNRQQFDYTNhM2FAAFGQABJ0gTAA0FAAAAAAAAAAA="
 
 tv_volume_up:
   sequence:

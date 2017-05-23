@@ -74,14 +74,24 @@ ifttt:
 
 # Living Room IR Blaster
 switch:
-  platform: broadlink
-  host: 10.0.0.31
-  mac: 'B4:43:0D:FC:17:82'
-  friendly_name: "Living Room IR Blaster"
-  switches: 
-    tv: 
-      friendly_name: "Hannspree TV"
-      command_on: "JgBQAAABJJQSEhETEjcSExETERQUEBETETgSOBETEDkROBI3EjgROBETERQRExE4EBQTEhETERMTNhE5EzYRExM2ETkUNRM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+  - platform: broadlink
+    host: 10.0.0.31
+    mac: 'B4:43:0D:FC:17:82'
+    friendly_name: "Living Room IR Blaster"
+    switches: 
+      tv: 
+        friendly_name: "Hannspree TV"
+        command_on: "JgBQAAABJJQSEhETEjcSExETERQUEBETETgSOBETEDkROBI3EjgROBETERQRExE4EBQTEhETERMTNhE5EzYRExM2ETkUNRM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
+  - platform: template
+    switches:
+      tv_volume:
+        value_template: "{{ is_state('true', 'true') }}"
+        command_on:
+          service: script.turn_on
+          entity_id: script.tv_volume_up
+        command_off:
+          service: script.turn_on
+          entity_id: script.tv_volume_down
 
 
 # Emulated Hue Bridge, allows Google Assistant to see
@@ -96,7 +106,8 @@ switch:
 #  advertise_ip: 10.0.0.20
 
 # Includes
-automation: !include_dir_list automations
+#automation: !include_dir_list automations
+automation: !include automations.yaml
 device_tracker: !include device_tracker.yaml
 group: !include groups.yaml
 input_slider: !include input_slider.yaml

@@ -2,7 +2,8 @@
 # Presence based
 ##########
 
-- alias: Notify when tony phone changes location
+- id: notify_phone_home
+  alias: Notify when tony phone changes location
   trigger: 
     platform: state
     entity_id: device_tracker.520dcd99cbb97b7d
@@ -13,7 +14,8 @@
       message: >
         {{ trigger.from_state.state }} to {{ trigger.to_state.state }}
 
-- alias: Turn on living room lights when sun sets and home
+- id: living_room_lights_on_sunset
+  alias: Turn on living room lights when sun sets and home
   trigger: 
     - platform: sun
       event: sunset
@@ -29,7 +31,8 @@
     - service: scene.turn_on
       entity_id: scene.living_room_bright
     
-- alias: Turn off all lights when leaving home
+- id: all_lights_off_leave_home
+  alias: Turn off all lights when leaving home
   trigger:
     platform: state
     entity_id: device_tracker.520dcd99cbb97b7d
@@ -39,7 +42,7 @@
     entity_id: device_tracker.520dcd99cbb97b7d
     state: 'not_home'
   action:
-    - delay: 00:10:00
+    - delay: 00:05:00
     - service: light.turn_off
       entity_id: group.all_lights
 
@@ -48,7 +51,8 @@
 ##########
 
 # Living Room
-- alias: Living Room Get Relaxed
+- id: living_room_get_relaxed
+  alias: Living Room Get Relaxed
   trigger:
     platform: time
     minutes: '/1'
@@ -60,7 +64,8 @@
     service: scene.turn_on
     entity_id: scene.living_room_relax_transition
 
-- alias: Living Room Time to Dim
+- id: living_room_time_to_die
+  alias: Living Room Time to Dim
   trigger:
     platform: time
     minutes: '/1'
@@ -72,7 +77,8 @@
     service: scene.turn_on
     entity_id: scene.living_room_dimmed_transition
 
-- alias: Living Room Nightlight On
+- id: living_room_nightlight_on
+  alias: Living Room Nightlight On
   trigger:
     platform: time
     minutes: '/1'
@@ -85,7 +91,8 @@
     entity_id: scene.living_room_nightlight_transition
 
 # Bedroom
-- alias: Bedroom Wake Up
+- id: bedroom_wake_up
+  alias: Bedroom Wake Up
   trigger:
     platform: time
     minutes: '/1'
@@ -97,7 +104,8 @@
     service: scene.turn_on
     entity_id: scene.all_wake_up
 
-- alias: Bedroom Light On
+- id: bedroom_light_on
+  alias: Bedroom Light On
   trigger:
     platform: time
     minutes: '/1'
@@ -109,7 +117,8 @@
     service: scene.turn_on
     entity_id: scene.bedroom_dimmed
 
-- alias: Bedroom Go to Sleep
+- id: bedroom_go_to_sleep
+  alias: Bedroom Go to Sleep
   trigger:
     platform: time
     minutes: '/1'
@@ -125,15 +134,65 @@
 # Input Select
 ##########
 
-- alias: Playstation Input
+- id: playstation_input
+  alias: Playstation Input
   trigger:
     platform: state
     entity_id: input_select.ps4_actions
-    to: "Media Player"
   action: 
-    service: shell_command.ps4_media_player
+    - service_template: >
+        {% if is_state("input_select.ps4_actions", "On") %}
+          shell_command.ps4_on
+        {%-elif is_state("input_select.ps4_actions", "Media Player") %}
+          shell_command.ps4_media_player
+        {%-elif is_state("input_select.ps4_actions", "Netflix") %}
+          shell_command.ps4_netflix
+        {%-elif is_state("input_select.ps4_actions", "Overwatch") %}
+          shell_command.ps4_overwatch
+        {%-elif is_state("input_select.ps4_actions", "Off") %}
+          shell_command.ps4_off
+        {% endif %}
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.ps4_actions
+        option: "-"
 
-- alias: bloom and tv
+- id: tv_actions_automation
+  alias: TV Actions Automation
+  trigger:
+    platform: state
+    entity_id: input_select.tv_actions
+  action: 
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.tv_actions", "Power") %}
+            script.tv_toggle_power
+          {%-elif is_state("input_select.tv_actions", "Input Wii U") %}
+            script.tv_input_wiiu
+          {%-elif is_state("input_select.tv_actions", "Input Chromecast") %}
+            script.tv_input_chromecast
+          {%-elif is_state("input_select.tv_actions", "Input PS4") %}
+            script.tv_input_ps4
+          {%-elif is_state("input_select.tv_actions", "Input Misc") %}
+            script.tv_input_misc
+          {%-elif is_state("input_select.tv_actions", "Mute") %}
+            script.tv_toggle_mute
+          {%-elif is_state("input_select.tv_actions", "Volume +5") %}
+            script.tv_volume_up
+          {%-elif is_state("input_select.tv_actions", "Volume -5") %}
+            script.tv_volume_down
+          {% endif %}
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_actions
+        option: "-"
+          
+
+
+
+- id: tv_bloom_and_tv
+  alias: bloom and tv
   trigger:
     platform: state
     entity_id: light.tv_bloom

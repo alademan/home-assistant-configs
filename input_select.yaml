@@ -109,6 +109,7 @@ lr_scenes:
 ps4_actions:
   name: Playstation 4
   options:
+    - '-'
     - 'On'
     - 'Netflix'
     - 'Media Player'
@@ -119,11 +120,13 @@ ps4_actions:
 tv_actions:
   name: TV
   options:
+    - '-'
     - 'Power'
     - 'Input Wii U'
     - 'Input Chromecast'
     - 'Input PS4'
     - 'Input Misc'
+    - 'Mute'
     - 'Volume +5'
     - 'Volume -5'
   icon: mdi:television
