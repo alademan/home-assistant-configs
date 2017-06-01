@@ -82,16 +82,16 @@ switch:
       tv: 
         friendly_name: "Hannspree TV"
         command_on: "JgBQAAABJJQSEhETEjcSExETERQUEBETETgSOBETEDkROBI3EjgROBETERQRExE4EBQTEhETERMTNhE5EzYRExM2ETkUNRM2EQAFHAABJEsRAA0FAAAAAAAAAAA="
-  - platform: template
-    switches:
-      tv_volume:
-        value_template: "{{ is_state('true', 'true') }}"
-        command_on:
-          service: script.turn_on
-          entity_id: script.tv_volume_up
-        command_off:
-          service: script.turn_on
-          entity_id: script.tv_volume_down
+#  - platform: template
+#    switches:
+#      tv_volume:
+#        value_template: "{{ is_state('true', 'true') }}"
+#        command_on:
+#          service: script.turn_on
+#          entity_id: script.tv_volume_up
+#        command_off:
+#          service: script.turn_on
+#          entity_id: script.tv_volume_down
 
 
 # Emulated Hue Bridge, allows Google Assistant to see
