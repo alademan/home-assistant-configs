@@ -2,7 +2,7 @@
   entities: 
     light.table_lamp:
       state: off
-    light.tv_bloom:
+    light.tv_iris:
       state: off
     light.floor_lamp:
       state: on

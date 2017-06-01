@@ -4,7 +4,7 @@
       state: on
       brightness: 254
       xy_color: [0.3689, 0.3719]
-    light.tv_bloom:
+    light.tv_iris:
       state: on
       brightness: 254
       xy_color: [0.3689, 0.3719]

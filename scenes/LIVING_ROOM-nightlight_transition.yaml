@@ -3,7 +3,7 @@
     light.table_lamp:
       state: off
       transition: 300
-    light.tv_bloom:
+    light.tv_iris:
       state: off
       transition: 300
     light.floor_lamp:

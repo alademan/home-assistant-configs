@@ -116,7 +116,12 @@
       transition: 300
       brightness: 254
       xy_color: [0.3689, 0.3719]
-    light.tv_bloom:
+    light.bloom:
+      state: on
+      transition: 300
+      brightness: 254
+      xy_color: [0.3689, 0.3719]
+    light.tv_iris:
       state: on
       transition: 300
       brightness: 254
