@@ -18,14 +18,14 @@ Tony Presence:
 
 TV Group:
   - script.tv_toggle_power 
-  - light.tv_bloom
+  - light.tv_iris
 
 # Lights
 ## Living Room
 Living Room Lights:
   - light.floor_lamp
   - light.table_lamp
-  - light.tv_bloom
+  - light.tv_iris
 
 Living Room Scenes:
   - group.living_room_normal_scenes
@@ -62,6 +62,7 @@ Living Room Automation:
 ## Bedroom
 Bedroom Lights:
   - light.nightstand
+  - light.bloom
 
 Bedroom Scenes:
   - group.bedroom_normal_scenes
