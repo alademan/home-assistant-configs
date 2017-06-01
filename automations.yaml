@@ -14,12 +14,29 @@
       message: >
         {{ trigger.from_state.state }} to {{ trigger.to_state.state }}
 
-- id: living_room_lights_on_sunset
+- id: living_room_lights_before_sunset
+  alias: Turn on living room lights hour before sunset
+  trigger: 
+    - platform: sun
+      event: sunset
+      offset: "-01:00:00"
+    - platform: state
+      entity_id: device_tracker.520dcd99cbb97b7d
+      state: 'home'
+  condition:
+    - condition: state
+      entity_id: device_tracker.520dcd99cbb97b7d
+      state: 'home'
+  action: 
+    - service: scene.turn_on
+      entity_id: scene.living_room_concentrate
+
+- id: living_room_lights_yellow_at_sunset
   alias: Turn on living room lights when sun sets and home
   trigger: 
     - platform: sun
       event: sunset
-      offset: "-00:45:00"
+      offset: "-00:15:00"
     - platform: state
       entity_id: device_tracker.520dcd99cbb97b7d
       state: 'home'
@@ -191,14 +208,14 @@
 
 
 
-- id: tv_bloom_and_tv
-  alias: bloom and tv
-  trigger:
-    platform: state
-    entity_id: light.tv_bloom
-  action:
-    service: homeassistant.toggle
-    entity_id: group.tv_group
+#- id: tv_bloom_and_tv
+#  alias: bloom and tv
+#  trigger:
+#    platform: state
+#    entity_id: light.tv_bloom
+#  action:
+#    service: homeassistant.toggle
+#    entity_id: group.tv_group
 
 #
 # All
