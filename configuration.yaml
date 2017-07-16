@@ -33,9 +33,9 @@ light:
   allow_unreachable: true
   filename: phue.conf
 
-#media_player:
-#  platform: cast
-#  host: 10.0.0.11
+media_player:
+  platform: cast
+  host: 10.0.0.11
     
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
@@ -104,6 +104,9 @@ switch:
 #  host_ip: 10.0.0.20
 #  listen_port: 80
 #  advertise_ip: 10.0.0.20
+
+# Configuration Panel
+config:
 
 # Includes
 #automation: !include_dir_list automations
