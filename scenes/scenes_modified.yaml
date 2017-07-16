@@ -167,6 +167,13 @@
       brightness: 77
       xy_color: [0.4572, 0.4098]
 
+- name: Bedroom Red
+  entities: 
+    light.nightstand:
+      state: on
+      brightness: 1
+      xy_color: [0.6736, 0.3221]
+
 - name: Bedroom Nightlight 
   entities: 
     light.nightstand:
