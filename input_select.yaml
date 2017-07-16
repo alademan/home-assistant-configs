@@ -107,18 +107,29 @@ lr_scenes:
   initial: 'Bright'
 
 ps4_actions:
-  name: Playstation 4
+  name: Playstation 4 Actions
   options:
     - '-'
     - 'On'
     - 'Netflix'
     - 'Media Player'
+    - 'Plex'
     - 'Overwatch'
     - 'Off'
   icon: mdi:playstation
 
+ps4_apps:
+  name: Playstation 4 Apps
+  options:
+    - '-'
+    - 'Netflix'
+    - 'Media Player'
+    - 'Plex'
+    - 'Overwatch'
+  icon: mdi:playstation
+
 tv_actions:
-  name: TV
+  name: TV Actions
   options:
     - '-'
     - 'Power'
@@ -130,6 +141,16 @@ tv_actions:
     - 'Volume +5'
     - 'Volume -5'
   icon: mdi:television
+
+tv_input:
+  name: TV Inputs
+  options:
+    - '-'
+    - 'Input Wii U'
+    - 'Input Chromecast'
+    - 'Input PS4'
+    - 'Input Misc'
+  icon: mdi:cast
 
 soundbar_actions:
   name: Soundbar

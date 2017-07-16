@@ -11,3 +11,4 @@ phue.conf
 secrets.yaml
 google_calendars.yaml
 panel_iframe.yaml
+*.bak

@@ -29,7 +29,7 @@
       state: 'home'
   action: 
     - service: scene.turn_on
-      entity_id: scene.living_room_concentrate
+      entity_id: scene.living_room_concentrate_transition
 
 - id: living_room_lights_yellow_at_sunset
   alias: Turn on living room lights when sun sets and home
@@ -46,7 +46,7 @@
       state: 'home'
   action: 
     - service: scene.turn_on
-      entity_id: scene.living_room_bright
+      entity_id: scene.living_room_bright_transition
     
 - id: all_lights_off_leave_home
   alias: Turn off all lights when leaving home
@@ -81,7 +81,7 @@
     service: scene.turn_on
     entity_id: scene.living_room_relax_transition
 
-- id: living_room_time_to_die
+- id: living_room_time_to_dim
   alias: Living Room Time to Dim
   trigger:
     platform: time
@@ -106,6 +106,30 @@
   action: 
     service: scene.turn_on
     entity_id: scene.living_room_nightlight_transition
+
+- id: weekday_morning_tv_chromecast
+  alias: Weekday Morning TV Chromecast
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: time 
+    weekday: 
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sun
+  action:
+    - service: script.turn_on
+      entity_id: script.tv_toggle_power
+    - delay: 0:00:15
+    - service: script.turn_on
+      entity_id: script.tv_input_chromecast
+
 
 # Bedroom
 - id: bedroom_wake_up
@@ -151,8 +175,8 @@
 # Input Select
 ##########
 
-- id: playstation_input
-  alias: Playstation Input
+- id: playstation_actions
+  alias: Playstation Actions
   trigger:
     platform: state
     entity_id: input_select.ps4_actions
@@ -164,6 +188,8 @@
           shell_command.ps4_media_player
         {%-elif is_state("input_select.ps4_actions", "Netflix") %}
           shell_command.ps4_netflix
+        {%-elif is_state("input_select.ps4_actions", "Plex") %}
+          shell_command.ps4_plex
         {%-elif is_state("input_select.ps4_actions", "Overwatch") %}
           shell_command.ps4_overwatch
         {%-elif is_state("input_select.ps4_actions", "Off") %}
@@ -205,7 +231,28 @@
         entity_id: input_select.tv_actions
         option: "-"
           
-
+- id: tv_input_automation
+  alias: TV Input Automation
+  trigger:
+    platform: state
+    entity_id: input_select.tv_input
+  action: 
+    - service: script.turn_on
+      data_template:
+        entity_id: >
+          {%-if is_state("input_select.tv_input", "Input Wii U") %}
+            script.tv_input_wiiu
+          {%-elif is_state("input_select.tv_input", "Input Chromecast") %}
+            script.tv_input_chromecast
+          {%-elif is_state("input_select.tv_input", "Input PS4") %}
+            script.tv_input_ps4
+          {%-elif is_state("input_select.tv_input", "Input Misc") %}
+            script.tv_input_misc
+          {% endif %}
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_input
+        option: "-"
 
 
 #- id: tv_bloom_and_tv

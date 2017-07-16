@@ -28,3 +28,11 @@ ps4:
   mac: 70:9e:29:4a:cc:d8
   track: true
   hide_if_away: no
+
+0071ccb66aa6:
+  hide_if_away: false
+  mac: 00:71:CC:B6:6A:A6
+  name: 0071ccb66aa6
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.

@@ -16,9 +16,16 @@ Tony Presence:
   - device_tracker.tssltc026
   - device_tracker.ps4
 
-TV Group:
-  - script.tv_toggle_power 
-  - light.tv_iris
+TV Actions:
+  control: hidden
+  entities:
+    - media_player._fun
+    - script.tv_toggle_power 
+    - input_select.tv_input
+    - script.tv_toggle_mute
+    - script.tv_volume_up
+    - script.tv_volume_down
+    - input_select.ps4_actions
 
 # Lights
 ## Living Room
@@ -58,7 +65,12 @@ Living Room Automation:
     - input_select.lr_dim
     - automation.living_room_nightlight_on
     - input_select.lr_nightlight
+    - automation.weekday_morning_tv_chromecast
 
+Living Room Devices:
+  entities:
+      #- group.ps4_actions
+    
 ## Bedroom
 Bedroom Lights:
   - light.nightstand
@@ -79,6 +91,7 @@ Bedroom Normal Scenes:
 
 Bedroom Colorful Scenes:
   - scene.bedroom_night_pink
+  - scene.bedroom_red
 
 Bedroom Automation:
   - automation.bedroom_wake_up
@@ -92,12 +105,8 @@ Bedroom Automation:
 Lights General Presence Automation:
   - automation.notify_when_tony_phone_changes_location
   - automation.turn_on_living_room_lights_when_sun_sets_and_home
-  - input_select.arrive_home_scene
+    #- input_select.arrive_home_scene
   - automation.turn_off_all_lights_when_leaving_home
-
-Lights General Time Automation:
-  - automation.turn_all_nightlights_off
-  - automation.energize_living_room_at_sunrise
 
 # Resources
 VPS:
@@ -123,13 +132,11 @@ Living Room:
   view: yes
   entities: 
 #    - input_select.lr_scenes
-    - input_select.tv_actions
-    - input_select.ps4_actions
+#- group.living_room_devices
     - group.living_room_lights
     - group.living_room_normal_scenes
     - group.living_room_colorful_scenes
-    - switch.hannspree_tv
-    - switch.tv_volume
+    - group.tv_actions
 
 Bedroom:
   view: yes
@@ -138,15 +145,6 @@ Bedroom:
     - group.bedroom_normal_scenes
     - group.bedroom_colorful_scenes
 
-#Lights:
-#  view: yes
-#  entities:
-#    - group.living_room_lights
-#    - group.living_room_normal_scenes
-#    - group.living_room_colorful_scenes
-#    - group.bedroom_lights
-#    - group.bedroom_normal_scenes
-#    - group.bedroom_colorful_scenes
 
 Automation:
   view: yes
@@ -154,7 +152,6 @@ Automation:
     - group.living_room_automation
     - group.bedroom_automation
     - group.lights_general_presence_automation
-    - group.lights_general_time_automation
 
 Resources:
   view: yes

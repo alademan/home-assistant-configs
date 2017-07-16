@@ -102,6 +102,15 @@ scene.bedroom_nightlight:
 scene.bedroom_night_pink:
   friendly_name: Night Pink
 
+# Script customizations
+script.tv_toggle_power:
+  icon: mdi:power
+script.tv_toggle_mute:
+  icon: mdi:volume-mute
+script.tv_volume_up:
+  icon: mdi:volume-plus
+script.tv_volume_down:
+  icon: mdi:volume-minus
 
 # Device Customizations
 device_tracker.venue8pro:
