@@ -1,0 +1,17 @@
+- name: Living Room Bright Transition
+  entities: 
+    light.floor_lamp:
+      state: on
+      brightness: 254
+      transition: 600
+      xy_color: [0.457, 0.4098]
+    light.tv_iris:
+      state: on
+      brightness: 254
+      transition: 10
+      xy_color: [0.457, 0.4098]
+    light.table_lamp:
+      state: on
+      brightness: 254
+      transition: 600
+      xy_color: [0.457, 0.4098]
