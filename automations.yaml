@@ -107,8 +107,8 @@
     service: scene.turn_on
     entity_id: scene.living_room_nightlight_transition
 
-- id: weekday_morning_tv_chromecast
-  alias: Weekday Morning TV Chromecast
+- id: weekday_morning_tv_chromecast_on
+  alias: Weekday Morning TV Chromecast On
   trigger:
     platform: time
     hours: 9
@@ -129,6 +129,26 @@
     - delay: 0:00:15
     - service: script.turn_on
       entity_id: script.tv_input_chromecast
+
+- id: weekday_morning_tv_chromecast_off
+  alias: Weekday Morning TV Chromecast Off
+  trigger:
+    platform: time
+    hours: 9
+    minutes: 0
+    seconds: 0
+  condition:
+    condition: time 
+    weekday: 
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sun
+  action:
+    - service: script.turn_on
+      entity_id: script.tv_toggle_power
 
 
 # Bedroom

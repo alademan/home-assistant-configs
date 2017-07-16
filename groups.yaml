@@ -65,7 +65,8 @@ Living Room Automation:
     - input_select.lr_dim
     - automation.living_room_nightlight_on
     - input_select.lr_nightlight
-    - automation.weekday_morning_tv_chromecast
+    - automation.weekday_morning_tv_chromecast_on
+    - automation.weekday_morning_tv_chromecast_off
 
 Living Room Devices:
   entities:
