@@ -122,11 +122,13 @@
       - wed
       - thu
       - fri
-      - sun
   action:
     - service: script.turn_on
       entity_id: script.tv_toggle_power
-    - delay: 0:00:15
+    - delay: 0:00:12
+    - service: script.turn_on
+      entity_id: script.tv_input_reset
+    - delay: 0:00:12
     - service: script.turn_on
       entity_id: script.tv_input_chromecast
 
@@ -134,8 +136,8 @@
   alias: Weekday Morning TV Chromecast Off
   trigger:
     platform: time
-    hours: 9
-    minutes: 0
+    hours: 10
+    minutes: 30
     seconds: 0
   condition:
     condition: time 
@@ -145,7 +147,6 @@
       - wed
       - thu
       - fri
-      - sun
   action:
     - service: script.turn_on
       entity_id: script.tv_toggle_power
@@ -190,6 +191,46 @@
   action:
     service: light.turn_off
     entity_id: light.nightstand
+
+- id: bedroom_auto_off
+  alias: Bedroom Auto Off
+  trigger:
+    platform: time
+    hours: 12
+    minutes: 0
+    seconds: 0
+  action: 
+    service: light.turn_off 
+    entity_id: group.bedroom_lights
+
+##########
+# Device Actions
+##########
+
+- id: chromecast_state_change_lights
+  alias: Chromecast State Change Lights
+  trigger:
+    platform: state
+    entity_id: media_player._fun
+  action:
+    - service: scene.turn_on
+      data_template: 
+        entity_id: >
+          {% if is_state("media_player._fun", "playing") %}
+            scene.living_room_relax
+          {% elif is_state("media_player._fun", "paused") %}
+            scene.living_room_games
+          {% elif is_state("media_player._fun", "idle") %}
+            scene.living_room_bright
+          {% elif is_state("media_player._fun", "off") %}
+            scene.living_room_bright
+          {% endif %}
+#    - service: notify.pushover
+#      data_template:
+#        title: Chromecast State Change
+#        message: >
+#          {{ trigger.from_state.state }} to {{ trigger.to_state.state }}
+
 
 ##########
 # Input Select
